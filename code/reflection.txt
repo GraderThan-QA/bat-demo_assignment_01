@@ -1,1 +1,3 @@
-
+This assignment was pretty easy. I learned some Python and made the tip calculator
+work. The tests were kind of annoying but I got them to pass. I don't really have
+any questions.
