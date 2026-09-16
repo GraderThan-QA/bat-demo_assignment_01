@@ -1,3 +1,18 @@
-This assignment was pretty easy. I learned some Python and made the tip calculator
-work. The tests were kind of annoying but I got them to pass. I don't really have
-any questions.
+The thing that finally made sense to me this week is why bill.py has no input() or
+print() in it. On my first submission I had the math right in the module but I
+called split_evenly(subtotal, people) in console.py instead of split_evenly(total,
+people), so the per-person amount ignored the tip. The unit tests were all green
+and I still had a bug — that's the difference between a unit test (checks one
+function in isolation) and an integration test (checks that the console interface
+actually uses the module correctly). Reading the failing assertion ("$15.00" not in
+output) is what pointed me at the right line.
+
+I struggled most with the Streamlit dashboard. I left it half-done the first time
+because I didn't understand how the AppTest finds widgets — it turns out the key=
+argument on number_input and slider is what the test uses to look them up, and the
+st.metric tiles are what it reads the results from. Once I mirrored the console
+logic (same four bill functions) it passed.
+
+Next I want more practice with pandas: I built the per-person DataFrame by copying
+the pattern, but I'd like to construct one from scratch with a dict and an index
+without looking it up, and then plot it with st.bar_chart.
